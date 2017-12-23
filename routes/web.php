@@ -29,13 +29,17 @@ Route::get('/view/required/{id}', function ($id) {
 });
 
 //route with optional param
-Route::get('/view/optional/{id?}', function ($id=0) {
+Route::get('/view/optional/{id?}', function ($id=null) {
 	return 'User '.$id;
 });
 
 //route with param than pass to view
-Route::get('/view/data/{id?}', function ($id=0) {
-	return view('home.index',['id'=>$id]);
+Route::get('/view/data/', function ($id=0, $name='cn') {
+	return view('home.index',['id'=>$id,'dname'=>$name]);
+});
+
+Route::get('/view/test', function (\Illuminate\Http\Request $request) {
+	dd($request->all());
 });
 
 //route with param than pass to view

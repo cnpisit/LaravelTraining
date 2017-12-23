@@ -15,7 +15,8 @@
 	<!-- Small boxes (Stat box) -->
 	<div class="row">
 		<div class="col-lg-12">
-			{{isset($id)?$id:''}}
+			id = {{isset($id)?$id:''}}<br>
+			name = {{isset($dname)?$dname:''}}
 		</div>
 	</div>
 	<!-- /.row -->
