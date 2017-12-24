@@ -38,10 +38,19 @@ Route::get('/view/data/', function ($id=0, $name='cn') {
 	return view('home.index',['id'=>$id,'dname'=>$name]);
 });
 
+//route with query string
+//example http://domainname/view/test?id=1&name=test
 Route::get('/view/test', function (\Illuminate\Http\Request $request) {
 	dd($request->all());
 });
 
-//route with param than pass to view
-Route::get('/view/index/{id?}', 'SampleController@view');
+//route with controller and view
+Route::get('/sample/index', 'SampleController@index');
+
+Route::get('/sample/form', 'SampleController@form');
+//route with param pass to controller and view
+Route::get('/sample/view/{id?}', 'SampleController@view');
+
+//route with query string pass to controller and view
+Route::get('/sample/qView', 'SampleController@qView');
 
