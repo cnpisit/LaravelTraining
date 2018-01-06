@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 
 class SampleController extends Controller
@@ -18,8 +19,6 @@ class SampleController extends Controller
 	
 	public function qView(Request $request){
 		//to print all requested input
-		dd($request->all());
-		var_dump($request->all());
 		return view('sample.view', $request->all());
 	}
 	

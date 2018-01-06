@@ -15,7 +15,7 @@
 
 //route without controller & view
 Route::get('/', function () {
-	return 'Hello World';
+	return "Hello World";
 });
 
 //route with view
@@ -24,17 +24,17 @@ Route::get('/view', function () {
 });
 
 //route with required param
-Route::get('/view/required/{id}', function ($id) {
+Route::get('/view/test-1/{id}', function ($id) {
 	return 'User '.$id;
 });
 
 //route with optional param
-Route::get('/view/optional/{id?}', function ($id=null) {
+Route::get('/view/test-2/{id?}', function ($id=null) {
 	return 'User '.$id;
 });
 
 //route with param than pass to view
-Route::get('/view/data/', function ($id=0, $name='cn') {
+Route::get('/view/data/{id?}/{name?}', function ($id=0, $name='cn') {
 	return view('home.index',['id'=>$id,'dname'=>$name]);
 });
 
@@ -53,4 +53,9 @@ Route::get('/sample/view/{id?}', 'SampleController@view');
 
 //route with query string pass to controller and view
 Route::get('/sample/qView', 'SampleController@qView');
+
+Route::resource('/book', 'BookController');
+
+
+
 

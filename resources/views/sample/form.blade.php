@@ -14,7 +14,7 @@
 <section class="content">
 	<!-- Small boxes (Stat box) -->
 	<div class="row">
-		<div class="col-lg-12">
+		<div class="col-lg-6 col-md-12 col-sm-12 col-lg-offset-3">
 			<div class="box box-primary">
 				<div class="box-header with-border">
 					<h3 class="box-title">Quick Example</h3>
@@ -25,11 +25,11 @@
 					<div class="box-body">
 						<div class="form-group">
 							<label for="exampleInputEmail1">Email address</label>
-							<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+							<input type="email" class="form-control" >
 						</div>
 						<div class="form-group">
 							<label for="exampleInputPassword1">Password</label>
-							<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+							<input type="password" class="form-control" placeholder="Password">
 						</div>
 						<div class="form-group">
 							<label for="exampleInputFile">File input</label>
