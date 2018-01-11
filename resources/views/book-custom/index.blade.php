@@ -2,7 +2,7 @@
 @section('content')
 <section class="content-header">
 	<h1>
-		Book
+		BookCustom
 	</h1>
 	<ol class="breadcrumb">
 		<li><a href="#"><i class="fa fa-dashboard"></i> Book</a></li>
@@ -40,12 +40,8 @@
 									<td>{{$book->author_id}}</td>
 									<td>{{$book->publish_date}}</td>
 									<td>
-										<a href="{{url('/book/'.$book->id.'/edit')}}" class="btn btn-sm btn-info">Edit</a>
-										<form action="{{url('/book/'.$book->id)}}" method="POST">
-											<input type="hidden" name="_method" value="delete">
-											<input type="hidden" name="_token" value="{{ csrf_token() }}">
-											<button type="submit" class="btn btn-sm btn-danger"></button>
-										</form>
+										<a href="{{url('/book-custom/form/'.$book->id)}}" class="btn btn-xs btn-info">Edit</a>
+										<a href="{{url('/book-custom/delete/'.$book->id)}}" class="btn btn-xs btn-danger">Delete</a>
 									</td>
 								</tr>
 							@endforeach

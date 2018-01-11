@@ -2,12 +2,11 @@
 @section('content')
 <section class="content-header">
 	<h1>
-		Sample
-		<small>Sample page</small>
+		Book
 	</h1>
 	<ol class="breadcrumb">
 		<li><a href="#"><i class="fa fa-dashboard"></i> Book</a></li>
-		<li class="active">form</li>
+		<li class="active">Add</li>
 	</ol>
 </section>
 
@@ -28,7 +27,7 @@
 					<div class="box-body">
 						<div class="form-group">
 							<label for="">Title</label>
-							<input type="email" name="input[title]" class="form-control" >
+							<input type="text" name="input[title]" class="form-control" >
 						</div>
 						<div class="form-group">
 							<label for="">Generation</label>
@@ -44,7 +43,7 @@
 						</div>
 						<div class="form-group">
 							<label for="">Publish Date</label>
-							<input type="date" name="input[publish_date]" class="form-control">
+							<input type="string" name="input[publish_date]" class="form-control">
 						</div>
 					</div>
 					<!-- /.box-body -->

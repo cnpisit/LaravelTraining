@@ -39,7 +39,7 @@
 			</li>
 			<li class=" treeview">
 				<a href="#">
-					<i class="fa fa-dashboard"></i> <span>Book</span>
+					<i class="fa fa-dashboard"></i> <span>Book Resource</span>
 					<span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -49,64 +49,16 @@
 					<li><a href="{{url('/book/create')}}"><i class="fa fa-circle-o"></i> Add</a></li>
 				</ul>
 			</li>
-			<li>
-				<a href="pages/widgets.html">
-					<i class="fa fa-th"></i> <span>Widgets</span>
-					<span class="pull-right-container">
-              <small class="label pull-right bg-green">new</small>
-            </span>
-				</a>
-			</li>
-			<li class="treeview">
+			<li class=" treeview">
 				<a href="#">
-					<i class="fa fa-folder"></i> <span>Examples</span>
+					<i class="fa fa-dashboard"></i> <span>Book Custom</span>
 					<span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
 				</a>
 				<ul class="treeview-menu">
-					<li><a href="pages/examples/invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
-					<li><a href="pages/examples/profile.html"><i class="fa fa-circle-o"></i> Profile</a></li>
-					<li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Login</a></li>
-					<li><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> Register</a></li>
-					<li><a href="pages/examples/lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
-					<li><a href="pages/examples/404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
-					<li><a href="pages/examples/500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
-					<li><a href="pages/examples/blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
-					<li><a href="pages/examples/pace.html"><i class="fa fa-circle-o"></i> Pace Page</a></li>
-				</ul>
-			</li>
-			<li class="treeview">
-				<a href="#">
-					<i class="fa fa-share"></i> <span>Multilevel</span>
-					<span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-				</a>
-				<ul class="treeview-menu">
-					<li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-					<li class="treeview">
-						<a href="#"><i class="fa fa-circle-o"></i> Level One
-							<span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-						</a>
-						<ul class="treeview-menu">
-							<li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
-							<li class="treeview">
-								<a href="#"><i class="fa fa-circle-o"></i> Level Two
-									<span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-								</a>
-								<ul class="treeview-menu">
-									<li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-									<li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-								</ul>
-							</li>
-						</ul>
-					</li>
-					<li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+					<li><a href="{{url('/book-custom')}}"><i class="fa fa-circle-o"></i> List</a></li>
+					<li><a href="{{url('/book-custom/form')}}"><i class="fa fa-circle-o"></i> Add</a></li>
 				</ul>
 			</li>
 		</ul>

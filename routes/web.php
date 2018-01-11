@@ -54,7 +54,17 @@ Route::get('/sample/view/{id?}', 'SampleController@view');
 //route with query string pass to controller and view
 Route::get('/sample/qView', 'SampleController@qView');
 
+
+//route with resource example
 Route::resource('/book', 'BookController');
+
+
+//route custom example
+
+Route::get('/book-custom', 'BookCustomController@index');
+Route::get('/book-custom/form/{id?}', 'BookCustomController@form');
+Route::post('/book-custom/save/{id?}', 'BookCustomController@save');
+Route::get('/book-custom/delete/{id}', 'BookCustomController@delete');
 
 
 

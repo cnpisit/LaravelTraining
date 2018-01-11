@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -13,7 +14,8 @@ class BookController extends Controller
      */
     public function index()
     {
-        return view('book.index');
+    	$books = Book::all();
+		return view('book.index')->with(['books'=>$books]);
     }
 
     /**
@@ -34,7 +36,11 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-		dd($request->all());
+		$input = $request->input;
+		$book = new Book();
+		$book->fill($input);
+		$book->save();
+		return redirect('/book');
     }
 
     /**
@@ -56,14 +62,8 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-    	$book = [
-    		'title'=>'Laravel 5.3',
-			'generation'=>1,
-			'publisher_id'=>'sokleng',
-			'author_id'=>'Mr.Ratana',
-			'publish_date'=>'2017-11-11'
-		];
-		return view('book.update')->with($book);
+    	$book = Book::find($id);
+		return view('book.update')->with(['model'=>$book]);
     }
 
     /**
@@ -75,7 +75,11 @@ class BookController extends Controller
      */
     public function update(Request $request, $id)
     {
-		return dd($request->input);
+    	$input = $request->input;
+		$book = Book::find($id);
+		$book->fill($input);
+		$book->save();
+		return redirect('/book');
     }
 
     /**
@@ -86,6 +90,7 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
-		return "delete this book";
+		Book::where('id',$id)->delete();
+		return redirect('/book');
     }
 }

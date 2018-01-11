@@ -2,11 +2,11 @@
 @section('content')
 	<section class="content-header">
 		<h1>
-			Book
+			BookCustom
 		</h1>
 		<ol class="breadcrumb">
 			<li><a href="#"><i class="fa fa-dashboard"></i> Book</a></li>
-			<li class="active">Update</li>
+			<li class="active">Form</li>
 		</ol>
 	</section>
 	
@@ -20,12 +20,12 @@
 					</div>
 					<!-- /.box-header -->
 					<!-- form start -->
-					<form role="form" method="post" action="{{url('/book/'.$model->id)}}">
+					<form role="form" method="post" action="{{url('/book-custom/save')}}">
 						
-						{{--{{csrf_field()}}--}}
-						{{--{{ method_field('PUT') }}--}}
-						<input type="hidden" name="_method" value="PUT">
-						<input type="hidden" name="_token" value="{{csrf_token()}}">
+						{{csrf_field()}}
+						@if(isset($model))
+							<input type="hidden" name="id" value="{{$model->id}}">
+						@endif
 						<div class="box-body">
 							<div class="form-group">
 								<label for="">Title</label>
