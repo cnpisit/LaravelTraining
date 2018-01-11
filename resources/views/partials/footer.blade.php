@@ -8,6 +8,8 @@
 </script>
 <!-- Bootstrap 3.3.7 -->
 <script src="{{asset('/adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('/adminlte/bower_components/select2/dist/js/select2.full.min.js')}}"></script>
+<script src="{{asset('/adminlte/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
 <!-- Morris.js charts -->
 <script src="{{asset('/adminlte/bower_components/raphael/raphael.min.js')}}"></script>
 <script src="{{asset('/adminlte/bower_components/morris.js/morris.min.js')}}"></script>

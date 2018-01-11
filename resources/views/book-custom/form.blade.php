@@ -45,24 +45,53 @@
 							</div>
 							<div class="form-group">
 								<label for="">Publisher</label>
-								<input
-										type="text"
+								<select
 										name="input[publisher_id]"
-										class="form-control"
-										value="{{isset($model)?$model->publisher_id:''}}">
+										class="form-control select2">
+									<option
+											value="1"
+											{{isset($model)&&$model->publisher_id==1?'selected':''}}>
+										Publisher_1
+									</option>
+									<option
+											value="2"
+											{{isset($model)&&$model->publisher_id==2?'selected':''}}>
+										Publisher_2
+									</option>
+									<option
+											value="3"
+											{{isset($model)&&$model->publisher_id==3?'selected':''}}>
+										Publisher_3
+									</option>
+								</select>
 							</div>
 							<div class="form-group">
 								<label for="">Author</label>
-								<input
-										type="text"
+								<select
 										name="input[author_id]"
-										value="{{isset($model)?$model->author_id:''}}"
-										class="form-control">
+										class="form-control select2">
+									<option
+											value="1"
+											{{isset($model)&&$model->author_id==1?'selected':''}}>
+										author_1
+									</option>
+									<option
+											value="2"
+											{{isset($model)&&$model->author_id==2?'selected':''}}>
+										author_2
+									</option>
+									<option
+											value="3"
+											{{isset($model)&&$model->author_id==3?'selected':''}}>
+										author_3
+									</option>
+								</select>
 							</div>
 							<div class="form-group">
 								<label for="">Publish Date</label>
 								<input
-										type="date"
+										type="text"
+										id="datepicker"
 										name="input[publish_date]"
 										value="{{isset($model)?$model->publish_date:''}}"
 										class="form-control">
@@ -81,3 +110,12 @@
 	
 	</section>
 @endsection
+
+@push('scripts')
+	<script>
+		$('.select2').select2();
+		$('#datepicker').datepicker({
+			format: 'yyyy-mm-dd',
+		})
+	</script>
+@endpush
