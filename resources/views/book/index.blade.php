@@ -44,7 +44,7 @@
 										<form action="{{url('/book/'.$book->id)}}" method="POST">
 											<input type="hidden" name="_method" value="delete">
 											<input type="hidden" name="_token" value="{{ csrf_token() }}">
-											<button type="submit" class="btn btn-sm btn-danger"></button>
+											<button type="submit" class="btn btn-sm btn-danger">Delete</button>
 										</form>
 									</td>
 								</tr>

@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class BookCustomController extends Controller
 {
+	
+	/**
+	 * will list all books
+	 */
 	public function index(){
 		$books = Book::all();
 		return view('book-custom.index')->with(['books'=>$books]);
@@ -21,7 +25,11 @@ class BookCustomController extends Controller
 	public function form($id=null){
 		if ($id!=null){
 			$book = Book::find($id);
-			return view('book-custom.form')->with(['model'=>$book]);
+			$output = [
+				'model'=>$book,
+				'book'=>$book
+			];
+			return view('book-custom.form')->with($output);
 		}
 		return view('book-custom.form');
 	}

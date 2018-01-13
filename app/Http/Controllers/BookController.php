@@ -63,6 +63,7 @@ class BookController extends Controller
     public function edit($id)
     {
     	$book = Book::find($id);
+    	// Book::where('id',$id)->order_by('id','desc')->first()
 		return view('book.update')->with(['model'=>$book]);
     }
 
@@ -75,10 +76,10 @@ class BookController extends Controller
      */
     public function update(Request $request, $id)
     {
-    	$input = $request->input;
-		$book = Book::find($id);
-		$book->fill($input);
-		$book->save();
+    	$input = $request->input; //get data from form
+		$book = Book::find($id); //get sample book
+		$book->fill($input); // match attribute from input with database
+		$book->save(); //flash data into database
 		return redirect('/book');
     }
 
