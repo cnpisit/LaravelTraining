@@ -8,6 +8,8 @@
 </script>
 <!-- Bootstrap 3.3.7 -->
 <script src="{{asset('/adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('/adminlte/bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('/adminlte/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
 <script src="{{asset('/adminlte/bower_components/select2/dist/js/select2.full.min.js')}}"></script>
 <script src="{{asset('/adminlte/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
 <!-- Morris.js charts -->
@@ -35,5 +37,8 @@
 <script src="{{asset('/adminlte/dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('/adminlte/dist/js/pages/dashboard.js')}}"></script>
+
+<!-- bootstrap notify -->
+<script src="{{asset('/js/bootstrap-notify.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('/adminlte/dist/js/demo.js')}}"></script>

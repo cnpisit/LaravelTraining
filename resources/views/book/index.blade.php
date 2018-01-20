@@ -20,7 +20,7 @@
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">
-					<table class="table table-bordered">
+					<table class="table table-bordered" id="book-list">
 						<tr>
 							<th style="width: 10px">#</th>
 							<th>Title</th>
@@ -60,3 +60,14 @@
 
 </section>
 @endsection
+
+@push('scripts')
+	<script>
+
+		$(function () {
+			$('#book-list').DataTable()
+		})
+	
+	</script>
+@endpush
+

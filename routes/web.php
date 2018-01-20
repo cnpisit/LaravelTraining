@@ -59,12 +59,24 @@ Route::get('/sample/qView', 'SampleController@qView');
 Route::resource('/book', 'BookController');
 
 
-//route custom example
-
+//route custom example is recommended
 Route::get('/book-custom', 'BookCustomController@index');
 Route::get('/book-custom/form/{id?}', 'BookCustomController@form');
 Route::post('/book-custom/save/{id?}', 'BookCustomController@save');
 Route::get('/book-custom/delete/{id}', 'BookCustomController@delete');
+
+//route Author
+//Route::get('/author', 'AuthorController@index');
+//Route::match(['get','post'],'/author/create', 'AuthorController@create');
+//Route::match(['get','post'],'/author/update/{id}', 'AuthorController@update');
+//Route::get('/author/delete/{id}', 'AuthorController@delete');
+
+Route::get('/author', 'AuthorController@index');
+Route::get('/author/form/{id?}', 'AuthorController@form');
+Route::post('/author/save', 'AuthorController@save');
+Route::get('/author/delete/{id}', 'AuthorController@delete');
+
+
 
 
 
