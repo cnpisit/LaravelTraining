@@ -77,6 +77,12 @@ Route::post('/author/save', 'AuthorController@save');
 Route::get('/author/delete/{id}', 'AuthorController@delete');
 
 
+Route::get('/publisher', 'PublisherController@index');
+Route::get('/publisher/form/{id?}', 'PublisherController@form');
+Route::post('/publisher/save', 'PublisherController@save');
+Route::get('/publisher/delete/{id}', 'PublisherController@delete');
+
+
 
 
 

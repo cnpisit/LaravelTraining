@@ -48,21 +48,16 @@
 								<select
 										name="input[publisher_id]"
 										class="form-control select2">
-									<option
-											value="1"
-											{{isset($model)&&$model->publisher_id==1?'selected':''}}>
-										Publisher_1
-									</option>
-									<option
-											value="2"
-											{{isset($model)&&$model->publisher_id==2?'selected':''}}>
-										Publisher_2
-									</option>
-									<option
-											value="3"
-											{{isset($model)&&$model->publisher_id==3?'selected':''}}>
-										Publisher_3
-									</option>
+									
+									@if(isset($publishers))
+										@foreach($publishers as $publisher)
+											<option
+													value="{{$publisher->id}}"
+													{{isset($model)&&$model->publisher_id==$publisher->id?'selected':''}}>
+												{{$publisher->name}}
+											</option>
+										@endforeach
+									@endif
 								</select>
 							</div>
 							<div class="form-group">
@@ -70,21 +65,15 @@
 								<select
 										name="input[author_id]"
 										class="form-control select2">
-									<option
-											value="1"
-											{{isset($model)&&$model->author_id==1?'selected':''}}>
-										author_1
-									</option>
-									<option
-											value="2"
-											{{isset($model)&&$model->author_id==2?'selected':''}}>
-										author_2
-									</option>
-									<option
-											value="3"
-											{{isset($model)&&$model->author_id==3?'selected':''}}>
-										author_3
-									</option>
+									@if(isset($authors))
+										@foreach($authors as $author)
+											<option
+													value="{{$author->id}}"
+													{{isset($model)&&$model->author_id==$author->id?'selected':''}}>
+												{{$author->name}}
+											</option>
+										@endforeach
+									@endif
 								</select>
 							</div>
 							<div class="form-group">

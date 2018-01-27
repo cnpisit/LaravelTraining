@@ -19,4 +19,12 @@ class Book extends Model
 		'author_id',
 		'publish_date',
 	];
+	
+	public function author(){
+		return $this->belongsTo('App\Models\Author');
+	}
+	
+	public function publisher(){
+		return $this->belongsTo('App\Models\Publisher');
+	}
 }

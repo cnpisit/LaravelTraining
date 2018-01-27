@@ -2,10 +2,10 @@
 @section('content')
 <section class="content-header">
 	<h1>
-		BookCustom
+		Publisher
 	</h1>
 	<ol class="breadcrumb">
-		<li><a href="#"><i class="fa fa-dashboard"></i> Book</a></li>
+		<li><a href="#"><i class="fa fa-dashboard"></i> Publisher</a></li>
 		<li class="active">Index</li>
 	</ol>
 </section>
@@ -23,26 +23,22 @@
 					<table class="table table-bordered" id="book-list">
 						<thead>
 						<tr>
-							<th>Title</th>
-							<th>Generation</th>
-							<th >Publisher</th>
-							<th>Author</th>
-							<th >Publish Date</th>
+							<th>Id</th>
+							<th>Publisher Name</th>
+							<th>Address</th>
 							<th>Action</th>
 						</tr>
 						</thead>
 						<tbody>
-						@if(isset($books))
-							@foreach($books as $book)
+						@if(isset($publishers))
+							@foreach($publishers as $publisher)
 								<tr>
-									<td>{{$book->title}}</td>
-									<td>{{$book->generation}}</td>
-									<td>{{$book->publisher->name}}</td>
-									<td>{{$book->author->name}}</td>
-									<td>{{$book->publish_date}}</td>
+									<td>{{$publisher->id}}</td>
+									<td>{{$publisher->name}}</td>
+									<td>{{$publisher->address}}</td>
 									<td>
-										<a href="{{url('/book-custom/form/'.$book->id)}}" class="btn btn-xs btn-info">Edit</a>
-										<a href="{{url('/book-custom/delete/'.$book->id)}}" class="btn btn-xs btn-danger">Delete</a>
+										<a href="{{url('/publisher/form/'.$publisher->id)}}" class="btn btn-xs btn-info">Edit</a>
+										<a href="{{url('/publisher/delete/'.$publisher->id)}}" class="btn btn-xs btn-danger">Delete</a>
 									</td>
 								</tr>
 							@endforeach

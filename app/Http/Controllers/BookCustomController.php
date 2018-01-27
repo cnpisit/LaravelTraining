@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Author;
 use App\Models\Book;
+use App\Models\Publisher;
 use Illuminate\Http\Request;
 
 class BookCustomController extends Controller
@@ -23,15 +25,13 @@ class BookCustomController extends Controller
 	 * if have id will return form with data
 	 * */
 	public function form($id=null){
+		$output['authors'] = Author::all();
+		$output['publishers'] = Publisher::all();
 		if ($id!=null){
 			$book = Book::find($id);
-			$output = [
-				'model'=>$book,
-				'book'=>$book
-			];
-			return view('book-custom.form')->with($output);
+			$output['model']=$book;
 		}
-		return view('book-custom.form');
+		return view('book-custom.form')->with($output);
 	}
 	
 	
