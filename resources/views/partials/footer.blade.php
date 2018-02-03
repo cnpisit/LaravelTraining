@@ -13,17 +13,17 @@
 <script src="{{asset('/adminlte/bower_components/select2/dist/js/select2.full.min.js')}}"></script>
 <script src="{{asset('/adminlte/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
 <!-- Morris.js charts -->
-<script src="{{asset('/adminlte/bower_components/raphael/raphael.min.js')}}"></script>
-<script src="{{asset('/adminlte/bower_components/morris.js/morris.min.js')}}"></script>
+{{--<script src="{{asset('/adminlte/bower_components/raphael/raphael.min.js')}}"></script>--}}
+{{--<script src="{{asset('/adminlte/bower_components/morris.js/morris.min.js')}}"></script>--}}
 <!-- Sparkline -->
-<script src="{{asset('/adminlte/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js')}}"></script>
+{{--<script src="{{asset('/adminlte/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js')}}"></script>--}}
 <!-- jvectormap -->
-<script src="{{asset('/adminlte/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js')}}"></script>
-<script src="{{asset('/adminlte/plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
+{{--<script src="{{asset('/adminlte/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js')}}"></script>--}}
+{{--<script src="{{asset('/adminlte/plugins/jvectormap/jquery-jvectormap-world-mill-en.js')}}"></script>--}}
 <!-- jQuery Knob Chart -->
-<script src="{{asset('/adminlte/bower_components/jquery-knob/dist/jquery.knob.min.js')}}"></script>
+{{--<script src="{{asset('/adminlte/bower_components/jquery-knob/dist/jquery.knob.min.js')}}"></script>--}}
 <!-- daterangepicker -->
-<script src="{{asset('/adminlte/bower_components/moment/min/moment.min.js')}}"></script>
+{{--<script src="{{asset('/adminlte/bower_components/moment/min/moment.min.js')}}"></script>--}}
 <script src="{{asset('/adminlte/bower_components/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
 <!-- datepicker -->
 <script src="{{asset('/adminlte/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
@@ -36,9 +36,9 @@
 <!-- AdminLTE App -->
 <script src="{{asset('/adminlte/dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{asset('/adminlte/dist/js/pages/dashboard.js')}}"></script>
+{{--<script src="{{asset('/adminlte/dist/js/pages/dashboard.js')}}"></script>--}}
 
 <!-- bootstrap notify -->
 <script src="{{asset('/js/bootstrap-notify.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{asset('/adminlte/dist/js/demo.js')}}"></script>
+{{--<script src="{{asset('/adminlte/dist/js/demo.js')}}"></script>--}}

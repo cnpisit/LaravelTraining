@@ -33,12 +33,23 @@
 										type="text"
 										name="input[name]"
 										class="form-control"
+										required
 										value="{{isset($model)?$model->name:''}}" >
+							</div>
+							<div class="form-group">
+								<label for="">Email</label>
+								<input
+										type="email"
+										name="input[email]"
+										class="form-control"
+										required
+										value="{{isset($model)?$model->email:''}}" >
 							</div>
 							<div class="form-group">
 								<label for="">Gender</label>
 								<select
 										name="input[gender]"
+										required
 										class="form-control select2">
 									<option
 											value="M"
@@ -57,6 +68,7 @@
 								<input
 										type="text"
 										id="datepicker"
+										required
 										name="input[dob]"
 										value="{{isset($model)?$model->dob:''}}"
 										class="form-control">
@@ -75,12 +87,35 @@
 	
 	</section>
 @endsection
-
 @push('scripts')
 	<script>
 		$('.select2').select2();
 		$('#datepicker').datepicker({
 			format: 'yyyy-mm-dd',
 		})
+		
+		@if(session('errors'))
+		
+				@if (count($errors) > 0)
+		var message = '<ul>';
+		@foreach ($errors->all() as $error)
+			message += '<li>{{ $error }}</li>';
+		@endforeach
+			message +='</ul>';
+		@endif
+		$.notify({
+// options
+			title:'Fail',
+			icon:'glyphicon glyphicon-floppy-remove',
+			message: message
+		},{
+// settings
+			type: 'danger',
+			animate: {
+				enter: 'animated fadeInRight',
+				exit: 'animated fadeOutRight'
+			},
+		});
+	@endif
 	</script>
 @endpush

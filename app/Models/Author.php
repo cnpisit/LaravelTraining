@@ -23,19 +23,35 @@ class Author extends Model
 	protected $fillable = [
 		'name',
 		'gender',
-		'dob'
+		'dob',
+		'email'
 	];
 	
-//	//for validate value while insert
-//	public function rule(){
+	/**
+	 * Defined Rule in model for validate input before save data
+	 */
+	public function rule($id=null){
+		return [
+			'name'=>'required',
+			'gender'=>'required',
+			'dob'=>'required',
+			'email'=>'required|unique:author,email,'.$id,
+		];
+	}
 //
-//	}
-//
-//	//for custom message error
-//	public function message(){}
+	/**
+	 * Custom message for error
+	 * message error is optional
+	 */
+	public function message(){
+		return [
+			'email.unique'=>'សារអេឡិច្ត្រូនិចនេះប្រើរូចម្តងហើយ',
+			'email.required'=>'អ្នកត្រូវតែបំពេញសាអេឡិចត្រូនិចនេះ'
+		];
+	}
 //
 	public function books(){
-		return $this->hasMany('App\Models\Book','author_id');
+		return $this->hasMany('App\Models\Book');
 	}
 
 }

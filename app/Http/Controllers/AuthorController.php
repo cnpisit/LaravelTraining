@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Author;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 
 class AuthorController extends Controller
@@ -28,15 +29,22 @@ class AuthorController extends Controller
 	
 	public function save(Request $request){
 		$input = $request->input;
+		$rule = [];
 		if ($request->has('id')){
 			$model = Author::find($request->id);
+			$rule = $model->rule($request->id);
 		} else {
 			$model = new Author();
+			$rule = $model->rule();
 		}
 		
+		/**
+		 * function validation will return back with error and input
+		 */
+		Validator::make($input, $rule, $model->message())->validate();
 		$model->fill($input);
 		$model->save();
-		return redirect('/author');
+		return redirect('/author')->with('success','Author has been saved..!');
 	}
 	
 	//Delete

@@ -82,6 +82,12 @@ Route::get('/publisher/form/{id?}', 'PublisherController@form');
 Route::post('/publisher/save', 'PublisherController@save');
 Route::get('/publisher/delete/{id}', 'PublisherController@delete');
 
+Route::get('/author/book/{id}',function ($id){
+	$author_books = \App\Models\Book::where('author_id',$id)->get();
+	return view('book.index')->with(['books'=>$author_books]);
+});
+
+
 
 
 
