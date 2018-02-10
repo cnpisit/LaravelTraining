@@ -14,7 +14,6 @@ class Author extends Model
 	
 	/**
 	 * The attributes that should be mutated to dates.
-	 *
 	 * @var array
 	 */
 	protected $dates = ['deleted_at'];
@@ -38,7 +37,7 @@ class Author extends Model
 			'email'=>'required|unique:author,email,'.$id,
 		];
 	}
-//
+
 	/**
 	 * Custom message for error
 	 * message error is optional
@@ -49,7 +48,7 @@ class Author extends Model
 			'email.required'=>'អ្នកត្រូវតែបំពេញសាអេឡិចត្រូនិចនេះ'
 		];
 	}
-//
+
 	public function books(){
 		return $this->hasMany('App\Models\Book');
 	}

@@ -37,8 +37,8 @@
 								<tr>
 									<td>{{$book->title}}</td>
 									<td>{{$book->generation}}</td>
-									<td>{{$book->publisher->name}}</td>
-									<td>{{$book->author->name}}</td>
+									<td>{{($book->publisher!=null)?$book->publisher->name:''}}</td>
+									<td>{{($book->author!=null)?$book->author->name:''}}</td>
 									<td>{{$book->publish_date}}</td>
 									<td>
 										<a href="{{url('/book-custom/form/'.$book->id)}}" class="btn btn-xs btn-info">Edit</a>

@@ -49,8 +49,13 @@ class AuthorController extends Controller
 	
 	//Delete
 	public function delete($id){
+		$return = 'false';
 		$model = Author::find($id);
-		$model->delete();
-		return redirect('/author');
+		if ($model!=null){
+			$model->delete();
+			$return = 'true';
+		}
+		
+		return $return;
 	}
 }

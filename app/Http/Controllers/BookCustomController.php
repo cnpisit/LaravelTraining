@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Author;
 use App\Models\Book;
 use App\Models\Publisher;
+use Faker\Provider\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BookCustomController extends Controller
 {
@@ -46,6 +48,10 @@ class BookCustomController extends Controller
 			$book = Book::find($request->id);
 		} else {
 			$book = new Book();
+		}
+		if ($request->file()){
+//			dd($request->book->getRealPath());
+			$input['book'] = Storage::disk('public')->putFile('books', $request->book);
 		}
 		$book->fill($input);
 		$book->save();

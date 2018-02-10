@@ -20,7 +20,7 @@
 					</div>
 					<!-- /.box-header -->
 					<!-- form start -->
-					<form role="form" method="post" action="{{url('/book-custom/save')}}">
+					<form role="form" method="post" action="{{url('/book-custom/save')}}" enctype="multipart/form-data">
 						
 						{{csrf_field()}}
 						@if(isset($model))
@@ -33,6 +33,7 @@
 										type="text"
 										name="input[title]"
 										class="form-control"
+										required
 										value="{{isset($model)?$model->title:''}}" >
 							</div>
 							<div class="form-group">
@@ -44,11 +45,15 @@
 										value="{{isset($model)?$model->generation:''}}">
 							</div>
 							<div class="form-group">
+								<label for="">File</label>
+								<input type="file" name="book">
+							</div>
+							<div class="form-group">
 								<label for="">Publisher</label>
 								<select
 										name="input[publisher_id]"
+										required
 										class="form-control select2">
-									
 									@if(isset($publishers))
 										@foreach($publishers as $publisher)
 											<option
@@ -64,6 +69,7 @@
 								<label for="">Author</label>
 								<select
 										name="input[author_id]"
+										required
 										class="form-control select2">
 									@if(isset($authors))
 										@foreach($authors as $author)

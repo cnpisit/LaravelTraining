@@ -46,8 +46,10 @@
 										</td>
 										<td>
 											<a href="{{url('/author/form/'.$author->id)}}" class="btn btn-xs btn-info">Edit</a>
-											<a href="{{url('/author/delete/'.$author->id)}}"
-											   class="btn btn-xs btn-danger">Delete</a>
+											<button
+													onclick="deleteConfirm('{{url('/author/delete/'.$author->id)}}')"
+													class="btn btn-xs btn-danger">Delete
+											</button>
 										</td>
 									</tr>
 								@endforeach
@@ -79,7 +81,36 @@
 // settings
 			type: 'success'
 		});
-		@endif
-	
+				@endif
+
+		var deleteConfirm = function (url) {
+				swal({
+					title: "Are you sure?",
+					text: "Once deleted, you will not be able to recover this Author",
+					icon: "warning",
+					buttons: true,
+					dangerMode: true,
+				}).then(function(willDelete) {
+					if(willDelete) {
+						$.get(url, function (response) {
+							console.log(response)
+							if (response){
+								swal("Author has been deleted!", {
+									icon: "success",
+								}).then(function () {
+									window.location.reload()
+								});
+								
+							} else {
+								swal("Author has not been deleted!", {
+									icon: "error",
+								});
+							}
+							
+						})
+						
+					}
+				});
+			}
 	</script>
 @endpush

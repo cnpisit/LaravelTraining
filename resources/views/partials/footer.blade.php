@@ -12,6 +12,7 @@
 <script src="{{asset('/adminlte/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
 <script src="{{asset('/adminlte/bower_components/select2/dist/js/select2.full.min.js')}}"></script>
 <script src="{{asset('/adminlte/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!-- Morris.js charts -->
 {{--<script src="{{asset('/adminlte/bower_components/raphael/raphael.min.js')}}"></script>--}}
 {{--<script src="{{asset('/adminlte/bower_components/morris.js/morris.min.js')}}"></script>--}}
