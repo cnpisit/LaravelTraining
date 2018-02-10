@@ -60,10 +60,10 @@ Route::resource('/book', 'BookController');
 
 
 //route custom example is recommended
-Route::get('/book-custom', 'BookCustomController@index');
-Route::get('/book-custom/form/{id?}', 'BookCustomController@form');
-Route::post('/book-custom/save/{id?}', 'BookCustomController@save');
-Route::get('/book-custom/delete/{id}', 'BookCustomController@delete');
+Route::get('/book-custom', 'BookCustomController@index')->middleware('auth');
+Route::get('/book-custom/form/{id?}', 'BookCustomController@form')->middleware('auth');
+Route::post('/book-custom/save/{id?}', 'BookCustomController@save')->middleware('auth');
+Route::get('/book-custom/delete/{id}', 'BookCustomController@delete')->middleware('auth');
 
 //route Author
 //Route::get('/author', 'AuthorController@index');
@@ -93,3 +93,7 @@ Route::get('/author/book/{id}',function ($id){
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

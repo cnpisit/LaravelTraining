@@ -46,7 +46,7 @@
 							</div>
 							<div class="form-group">
 								<label for="">File</label>
-								<input type="file" name="book">
+								<input class="form-control" type="file" name="book">
 							</div>
 							<div class="form-group">
 								<label for="">Publisher</label>

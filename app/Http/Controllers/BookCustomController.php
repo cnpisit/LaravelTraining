@@ -49,8 +49,8 @@ class BookCustomController extends Controller
 		} else {
 			$book = new Book();
 		}
-		if ($request->file()){
-//			dd($request->book->getRealPath());
+//		dd($request->file());
+		if ($request->file() && $request->book->getClientOriginalExtension()=='pdf'){
 			$input['book'] = Storage::disk('public')->putFile('books', $request->book);
 		}
 		$book->fill($input);

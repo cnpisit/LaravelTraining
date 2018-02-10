@@ -28,6 +28,7 @@
 							<th >Publisher</th>
 							<th>Author</th>
 							<th >Publish Date</th>
+							<th>File</th>
 							<th>Action</th>
 						</tr>
 						</thead>
@@ -40,6 +41,13 @@
 									<td>{{($book->publisher!=null)?$book->publisher->name:''}}</td>
 									<td>{{($book->author!=null)?$book->author->name:''}}</td>
 									<td>{{$book->publish_date}}</td>
+									<td>
+										@if($book->book!=null)
+											<a href="{{asset('storage/'.$book->book)}}">
+												<i class="fa fa-file"></i>
+											</a>
+										@endif
+									</td>
 									<td>
 										<a href="{{url('/book-custom/form/'.$book->id)}}" class="btn btn-xs btn-info">Edit</a>
 										<a href="{{url('/book-custom/delete/'.$book->id)}}" class="btn btn-xs btn-danger">Delete</a>
