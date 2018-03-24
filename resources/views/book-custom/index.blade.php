@@ -31,7 +31,7 @@
 											type="text"
 											name="title"
 											class="form-control"
-											value="{{isset($input)?$input['title']:''}}" >
+											value="{{isset($input)&&isset($input['title'])?$input['title']:''}}" >
 								</div>
 								<div class="form-group">
 									<label for="">Date</label>
@@ -40,7 +40,7 @@
 											name="date"
 											id="datepicker"
 											class="form-control"
-											value="{{isset($input)?$input['date']:''}}" >
+											value="{{isset($input)&&isset($input['date'])?$input['date']:''}}" >
 								</div>
 							</div>
 							<div class="col-lg-6">
@@ -56,7 +56,7 @@
 											@foreach($authors as $author)
 												<option
 														value="{{$author->id}}"
-														{{isset($input)&&$input['author']==$author->id?'selected':''}}>
+														{{isset($input['author'])&&$input['author']==$author->id?'selected':''}}>
 													{{$author->name}}
 												</option>
 											@endforeach
@@ -74,7 +74,7 @@
 											@foreach($publishers as $publisher)
 												<option
 														value="{{$publisher->id}}"
-														{{isset($input)&&$input['publisher']==$publisher->id?'selected':''}}>
+														{{isset($input['publisher'])&&$input['publisher']==$publisher->id?'selected':''}}>
 													{{$publisher->name}}
 												</option>
 											@endforeach
