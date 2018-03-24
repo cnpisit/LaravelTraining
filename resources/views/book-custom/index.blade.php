@@ -15,6 +15,89 @@
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="box">
+				<form action="{{url('/book-custom')}}" method="get">
+					{{--{{csrf_field()}}--}}
+					<div class="box-header with-border">
+						<div class="box-title">
+							Search
+						</div>
+					</div>
+					<div class="box-body">
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="form-group">
+									<label for="">Title</label>
+									<input
+											type="text"
+											name="title"
+											class="form-control"
+											value="{{isset($input)?$input['title']:''}}" >
+								</div>
+								<div class="form-group">
+									<label for="">Date</label>
+									<input
+											type="text"
+											name="date"
+											id="datepicker"
+											class="form-control"
+											value="{{isset($input)?$input['date']:''}}" >
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="form-group">
+									<label for="">Author</label>
+									
+									<select type="text"
+											name="author"
+											class="form-control"
+											value="">
+										<option value="0">All.....</option>
+										@if(isset($authors))
+											@foreach($authors as $author)
+												<option
+														value="{{$author->id}}"
+														{{isset($input)&&$input['author']==$author->id?'selected':''}}>
+													{{$author->name}}
+												</option>
+											@endforeach
+										@endif
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="">Publisher</label>
+									<select type="text"
+											name="publisher"
+											class="form-control"
+											value="">
+										<option value="0">All.....</option>
+										@if(isset($publishers))
+											@foreach($publishers as $publisher)
+												<option
+														value="{{$publisher->id}}"
+														{{isset($input)&&$input['publisher']==$publisher->id?'selected':''}}>
+													{{$publisher->name}}
+												</option>
+											@endforeach
+										@endif
+									</select>
+								</div>
+							</div>
+						</div>
+						
+						
+					</div>
+					<div class="box-footer">
+						<button type="submit" class="pull-right btn btn-info">
+							<i class="fa fa-search"></i> Search
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="box">
 				<div class="box-header with-border">
 					<h3 class="box-title">Bordered Table</h3>
 				</div>
@@ -68,6 +151,12 @@
 </section>
 @endsection
 @push('scripts')
+	<script>
+		$('.select2').select2();
+		$('#datepicker').datepicker({
+			format: 'yyyy-mm-dd',
+		})
+	</script>
 	<script>
 		$(document).ready(function () {
 			$('#book-list').DataTable()
