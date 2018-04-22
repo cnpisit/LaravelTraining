@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Publisher;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 class PublisherController extends Controller
@@ -44,5 +45,10 @@ class PublisherController extends Controller
 		$model = Publisher::find($id);
 		$model->delete();
 		return redirect('/publisher');
+	}
+	
+	public function count(){
+		$count = Publisher::whereDate('created_at', DB::raw('CURDATE()'))->count();
+		return $count;
 	}
 }

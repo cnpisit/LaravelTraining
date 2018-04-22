@@ -54,6 +54,7 @@
 					<i class="fa fa-dashboard"></i> <span>Book Custom</span>
 					<span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
+						<small class="label pull-right bg-blue book-number hidden">0</small>
             </span>
 				</a>
 				<ul class="treeview-menu">
@@ -65,8 +66,9 @@
 				<a href="#">
 					<i class="fa fa-dashboard"></i> <span>Author</span>
 					<span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+						<i class="fa fa-angle-left pull-right"></i>
+						<small class="label pull-right bg-blue author-number hidden">0</small>
+					</span>
 				</a>
 				<ul class="treeview-menu">
 					<li><a href="{{url('/author')}}"><i class="fa fa-circle-o"></i> List</a></li>
@@ -77,8 +79,9 @@
 				<a href="#">
 					<i class="fa fa-dashboard"></i> <span>Publisher</span>
 					<span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+						<i class="fa fa-angle-left pull-right"></i>
+						<small class="label pull-right bg-blue publisher-number hidden">0</small>
+					</span>
 				</a>
 				<ul class="treeview-menu">
 					<li><a href="{{url('/publisher')}}"><i class="fa fa-circle-o"></i> List</a></li>

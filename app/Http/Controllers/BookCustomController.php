@@ -85,4 +85,9 @@ class BookCustomController extends Controller
 		Book::where('id',$id)->delete();
 		return redirect('/book-custom');
 	}
+	
+	public function count(){
+		$count = Book::count();
+		return $count;
+	}
 }

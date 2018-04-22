@@ -41,5 +41,6 @@
 
 <!-- bootstrap notify -->
 <script src="{{asset('/js/bootstrap-notify.js')}}"></script>
+<script src="{{asset('/js/custom.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 {{--<script src="{{asset('/adminlte/dist/js/demo.js')}}"></script>--}}

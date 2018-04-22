@@ -58,4 +58,9 @@ class AuthorController extends Controller
 		
 		return $return;
 	}
+	
+	public function count(){
+		$count = Author::count();
+		return $count;
+	}
 }

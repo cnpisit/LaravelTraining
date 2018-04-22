@@ -64,6 +64,7 @@ Route::get('/book-custom', 'BookCustomController@index')->middleware('auth');
 Route::get('/book-custom/form/{id?}', 'BookCustomController@form')->middleware('auth');
 Route::post('/book-custom/save/{id?}', 'BookCustomController@save')->middleware('auth');
 Route::get('/book-custom/delete/{id}', 'BookCustomController@delete')->middleware('auth');
+Route::get('/book-custom/count', 'BookCustomController@count');
 
 //route Author
 //Route::get('/author', 'AuthorController@index');
@@ -75,12 +76,14 @@ Route::get('/author', 'AuthorController@index');
 Route::get('/author/form/{id?}', 'AuthorController@form');
 Route::post('/author/save', 'AuthorController@save');
 Route::get('/author/delete/{id}', 'AuthorController@delete');
+Route::get('/author/count', 'AuthorController@count');
 
 
 Route::get('/publisher', 'PublisherController@index');
 Route::get('/publisher/form/{id?}', 'PublisherController@form');
 Route::post('/publisher/save', 'PublisherController@save');
 Route::get('/publisher/delete/{id}', 'PublisherController@delete');
+Route::get('/publisher/count', 'PublisherController@count');
 
 Route::get('/author/book/{id}',function ($id){
 	$author_books = \App\Models\Book::where('author_id',$id)->get();
